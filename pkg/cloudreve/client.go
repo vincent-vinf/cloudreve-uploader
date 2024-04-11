@@ -1,14 +1,14 @@
 package cloudreve
 
 import (
-	"cloudreve_uploader/pkg/config"
-	"cloudreve_uploader/pkg/utils"
 	"context"
 	"fmt"
 	"github.com/dustin/go-humanize"
 	"github.com/gabriel-vasile/mimetype"
 	"github.com/go-resty/resty/v2"
 	"github.com/goccy/go-json"
+	"github.com/vincent-vinf/cloudreve-uploader/pkg/config"
+	"github.com/vincent-vinf/cloudreve-uploader/pkg/utils"
 	"io"
 	"net/http"
 	"net/url"

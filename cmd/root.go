@@ -4,11 +4,11 @@ Copyright © 2024 vincent
 package cmd
 
 import (
-	"cloudreve_uploader/pkg/cloudreve"
-	"cloudreve_uploader/pkg/config"
-	"cloudreve_uploader/pkg/utils"
 	"context"
 	"fmt"
+	"github.com/vincent-vinf/cloudreve-uploader/pkg/cloudreve"
+	"github.com/vincent-vinf/cloudreve-uploader/pkg/config"
+	"github.com/vincent-vinf/cloudreve-uploader/pkg/utils"
 	"os"
 	"os/signal"
 	"path"
