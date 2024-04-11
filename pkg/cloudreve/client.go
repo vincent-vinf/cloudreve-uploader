@@ -217,6 +217,7 @@ func (c *ClientImpl) upload(file string, remotePath string) error {
 			return err
 		}
 	}
+	logger.Infof("successfully uploaded file %s", file)
 
 	return nil
 }

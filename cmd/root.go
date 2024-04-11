@@ -49,6 +49,10 @@ var rootCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
+		needDirectLink, ok := viper.Get("direct-link").(bool)
+		if !ok || !needDirectLink {
+			return nil
+		}
 
 		links, err := client.DirectLinks(args, p)
 		if err != nil {
@@ -70,13 +74,13 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.PersistentFlags().String("config", path.Join(config.WorkDir, "config.yaml"), "config file")
+	rootCmd.PersistentFlags().String("config", "$HOME/.cloudreve_uploader.yaml", "config file")
 	_ = viper.BindPFlag("config", rootCmd.PersistentFlags().Lookup("config"))
 
 	rootCmd.Flags().Bool("direct-link", true, "get direct link")
 	_ = viper.BindPFlag("direct-link", rootCmd.Flags().Lookup("direct-link"))
 
-	rootCmd.Flags().String("path", "", "")
+	rootCmd.Flags().String("path", "", "remote path")
 	_ = viper.BindPFlag("path", rootCmd.Flags().Lookup("path"))
 
 	cfg := viper.GetViper().Get("config").(string)

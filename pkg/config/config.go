@@ -2,10 +2,6 @@ package config
 
 import "github.com/spf13/viper"
 
-const (
-	WorkDir = "$HOME/.cloudreve_uploader"
-)
-
 type Config struct {
 	Server   string `yaml:"server" json:"server"`
 	Username string `yaml:"username" json:"username"`
